@@ -2,8 +2,8 @@ cask "offload" do
   arch arm: "Apple_Silicon", intel: "Apple_Intel"
 
   version "1.0.0"
-  sha256 arm:   "4792c177db86f453c1a17cec37130326572b5255ce595e740ab941e841aed5d7",
-         intel: "357f3fad740d099b5f72b73ff58ac6a07541cdb6e03df0e452aedf266e2c9358"
+  sha256 arm:   "5b7b5ef65997dee606b86a004690bf10ab1b1f9fc3ec69e0969afba0a288fc0e",
+         intel: "a2b0f04f7a8438715dc37add828f71471c4754a3d8ae039362142b79f9a9ce56"
 
   url "https://github.com/iperamuna/offload/releases/download/v#{version}/Offload_#{version}_#{arch}.dmg"
   name "Offload"
