@@ -21,8 +21,8 @@ cask "deployer-daemon-companion" do
   app "Deployer Daemon Companion.app"
 
   zap trash: [
-    "~/Library/Application Support/com.indunilperamuna.deployerdaemon.companion",
-    "~/Library/Preferences/com.indunilperamuna.deployerdaemon.companion.plist",
-    "~/Library/Saved Application State/com.indunilperamuna.deployerdaemon.companion.savedState",
+    "~/Library/Application Support/com.deployerdaemon.companion",
+    "~/Library/Preferences/com.deployerdaemon.companion.plist",
+    "~/Library/Saved Application State/com.deployerdaemon.companion.savedState",
   ]
 end
