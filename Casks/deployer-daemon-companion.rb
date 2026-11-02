@@ -1,9 +1,9 @@
 cask "deployer-daemon-companion" do
   arch arm: "Apple_Silicon", intel: "Apple_Intel"
 
-  version "0.2.0"
-  sha256 arm:   "c2bca1f898f426e0d4f719a8286fcce9502ed7b432678313125b485efdaf96ad",
-         intel: "3ff879d93e5649732b360218143d97687403a02ff539900b9a46db8ab23bec66"
+  version "0.2.1"
+  sha256 arm:   "209b663fe177e58b27e88ed1d52d7f03e720340bbe066ac25c95643aedc2d5d6",
+         intel: "7a8d73b7e2f38c0f546eb5121cbc267f5ab6a864a192cb9db36df9aa9d267f0a"
 
   url "https://github.com/iperamuna/deployer-daemon-companion-releases/releases/download/v#{version}/Deployer_Daemon_Companion_#{version}_#{arch}.dmg"
   name "Deployer Daemon Companion"
