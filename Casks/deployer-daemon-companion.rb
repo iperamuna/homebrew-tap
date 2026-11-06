@@ -20,7 +20,7 @@ cask "deployer-daemon-companion" do
 
   app "Deployer Daemon Companion.app"
 
-  preflight_steps do
+  preflight do
     # Check if app is running before Homebrew moves the new .app into /Applications
     is_running = system_command("/usr/bin/pgrep",
                                 args: ["-f", "deployer-daemon-companion"],
@@ -34,7 +34,7 @@ cask "deployer-daemon-companion" do
     end
   end
 
-  postflight_steps do
+  postflight do
     app_path = "#{appdir}/Deployer Daemon Companion.app"
 
     # 1. Remove macOS quarantine attribute (prevents "damaged app" / Gatekeeper warning)
@@ -62,7 +62,7 @@ cask "deployer-daemon-companion" do
     end
   end
 
-  uninstall_preflight_steps do
+  uninstall_preflight do
     system_command "/usr/bin/pkill",
                    args: ["-f", "deployer-daemon-companion"],
                    must_succeed: false
