@@ -1,9 +1,9 @@
 cask "deployer-daemon-companion" do
   arch arm: "Apple_Silicon", intel: "Apple_Intel"
 
-  version "0.3.1"
-  sha256 arm:   "3922128b37e9dcdee4cc403f155bb8ad256226860d3d284fae6ff90e4565dc7c",
-         intel: "bedcc5bf16531d6ebb6ee10bdcba580db59bf7d1696f6939a63638b892e71f64"
+  version "0.4.0"
+  sha256 arm:   "fcbf256b520113c52dded807253604058b4ef32ee221e4b34af7842e78fa9846",
+         intel: "9a1328578b8eaab201b61834a99f0d7dad598ef81b8026bd66ca1d88879725a5"
 
   url "https://github.com/iperamuna/deployer-daemon-companion-releases/releases/download/v#{version}/Deployer_Daemon_Companion_#{version}_#{arch}.dmg"
   name "Deployer Daemon Companion"
@@ -20,7 +20,7 @@ cask "deployer-daemon-companion" do
 
   app "Deployer Daemon Companion.app"
 
-  preflight do
+  preflight_steps do
     # Check if app is running before Homebrew moves the new .app into /Applications
     is_running = system_command("/usr/bin/pgrep",
                                 args: ["-f", "deployer-daemon-companion"],
@@ -34,7 +34,7 @@ cask "deployer-daemon-companion" do
     end
   end
 
-  postflight do
+  postflight_steps do
     app_path = "#{appdir}/Deployer Daemon Companion.app"
 
     # 1. Remove macOS quarantine attribute (prevents "damaged app" / Gatekeeper warning)
@@ -62,7 +62,7 @@ cask "deployer-daemon-companion" do
     end
   end
 
-  uninstall_preflight do
+  uninstall_preflight_steps do
     system_command "/usr/bin/pkill",
                    args: ["-f", "deployer-daemon-companion"],
                    must_succeed: false
